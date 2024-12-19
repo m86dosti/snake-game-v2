@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🐍 Ultimate Snake Game! 🎮</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="game-title">SNAKE MASTER</h1>
+
+    <div class="stats-container">
+      <div class="stat">SCORE: <span id="score">0</span></div>
+      <div class="stat">HIGH: <span id="highScore">0</span></div>
+    </div>
+
+    <div id="menu-container" class="container">
+      <button class="menu-btn" onclick="startGame()">🎮 START GAME</button>
+      <button class="menu-btn" onclick="showSettings()">⚙️ SETTINGS</button>
+    </div>
+
+    <div id="settings-container" class="container" style="display: none">
+      <h2>GAME SETTINGS</h2>
+      <div class="setting-item">
+        <label>SNAKE COLOR:</label>
+        <input type="color" id="snakeColor" value="#4fff4f" />
+      </div>
+      <div class="setting-item">
+        <label>FOOD COLOR:</label>
+        <input type="color" id="foodColor" value="#ff4f4f" />
+      </div>
+      <div class="setting-item">
+        <label>GAME SPEED:</label>
+        <select id="gameSpeed">
+          <option value="150">EASY</option>
+          <option value="100" selected>NORMAL</option>
+          <option value="50">HARD</option>
+        </select>
+      </div>
+      <div class="setting-item">
+        <label>GRID SIZE:</label>
+        <select id="gridSize">
+          <option value="15">15 x 15</option>
+          <option value="20" selected>20 x 20</option>
+          <option value="25">25 x 25</option>
+        </select>
+      </div>
+      <button class="menu-btn" onclick="applySettings()">
+        ✨ APPLY & START
+      </button>
+    </div>
+
+    <div id="game-container" style="display: none">
+      <canvas id="gameCanvas" width="400" height="400"></canvas>
+      <div class="game-over" id="gameOver">GAME OVER!</div>
+    </div>
+
+    <div class="controls-info">USE ARROW KEYS TO CONTROL THE SNAKE</div>
+    <!-- M -->
+    <script src="main.js"></script>
+  </body>
+</html>
